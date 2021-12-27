@@ -1,2 +1,2 @@
 # Javascript-Learn
-Обучение Javascript
++ Обучение Javascript, необходимый минимум для начала изучения React.js

@@ -1,3 +1,6 @@
+ALWAYS USE
+'use strict';
+
 ###########   Modals Windows #################### 
 
 alert(message)
