@@ -24,6 +24,13 @@ mass.unshift("Zero", "One"); // one or more items can add
 console.log(mass); // [ 'Zero', 'One', 'Two', 'Three', 'four' ]
 
 
+/**                ARRAY.SLICE()                              **/
+// arr.slice(start, end) -> [start; end) copy
+let myArr = ["M", "i", "k", "h", "a", "i", "l"];
+console.log(myArr.slice()); // ["M", "i", "k", "h", "a", "i", "l"];
+console.log(myArr.slice(0, 2)); // [ 'M', 'i' ]
+console.log(myArr.slice(2)); // [ 'k', 'h', 'a', 'i', 'l' ]
+
 
 /**                ARRAY.SPLICE()                             **/
 let arr = ["Я", "изучаю", "JavaScript"];
