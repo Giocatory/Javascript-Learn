@@ -63,3 +63,21 @@ let usersMapped = users
 console.log(usersMapped);
 console.log(usersMapped[0].id); // 1
 console.log(usersMapped[0].fullName); // Вася Пупкин
+
+let middleAge = (usersMapped.map(age => age.age).reduce((acc, age) => acc + age, 0) / usersMapped.length).toFixed(2);
+console.log(middleAge); // 27.67
+
+
+// Leave only unique values
+let strings = ["кришна", "кришна", "харе", "харе", "харе", "харе", "кришна", "кришна", ":-O"];
+
+let uniqueStrings = (arr) => {
+    let unique = new Set(arr);
+    let result = [];
+    unique.forEach(elem => {
+        result.push(elem);
+    });
+    return result;
+};
+
+console.log(uniqueStrings(strings)); // [ 'кришна', 'харе', ':-O' ]
