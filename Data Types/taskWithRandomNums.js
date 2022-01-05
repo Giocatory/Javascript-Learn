@@ -1,3 +1,5 @@
+'use strict';
+
 let sum = 0.1 + 0.2;
 
 console.log(sum === 0.3); // false
@@ -16,7 +18,6 @@ function random(min, max) {
 }
 
 console.log(random(1, 100)); // 1 -> 100
-
 
 
 // Another option is more correct //
