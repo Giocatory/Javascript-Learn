@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *,
+        *::after,
+        *::before {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="main-header"></h1>
+    <h2></h2>
+    <h3 class="header-three"></h3>
+    <h4 id="header-four"></h4>
+    <h5></h5>
+    <h6></h6>
+
+
+
+    <script>
+        /* let elem1 = document.querySelector('h1'); // css selector */
+        let elem1 = document.querySelector('h1.main-header'); // !!! Use only it (how we calling in CSS)
+        let elem2 = document.getElementsByTagName('h2')[0]; // Outdated
+        let elem3 = document.getElementsByClassName('header-three')[0]; // Outdated
+        let elem4 = document.getElementById('header-four');
+        let elem5 = elem4.nextElementSibling;
+        let elem6 = document.querySelectorAll('h6')[0];
+
+        elem1.innerText = "It's first header";
+        elem2.innerText = "It's two header";
+        elem3.innerText = "It's three header";
+        elem4.innerText = "It's four header"
+        elem5.innerText = "It's five header";
+        elem6.innerText = "It's six header";
+
+        let elements = [elem1, elem2, elem3, elem4, elem5, elem6];
+        let colorBack = ['Salmon', 'OrangeRed', 'OliveDrab', 'DarkCyan', 'MediumSlateBlue', 'SaddleBrown', 'DarkSlateGrey',
+            'Gray', 'Maroon', 'Black', 'Indigo', 'Teal', 'Crimson'
+        ];
+        let count = 1000;
+
+        for (let i = 0; i < 6; i++) {
+            setTimeout(() => {
+                addStylesTo(elements[i], `Header h${i+1}`, colorBack[Math.floor(Math.random() * colorBack.length)]);
+            }, count)
+            count += 1000;
+        }
+
+
+        function addStylesTo(node, text, color) {
+            node.innerText = text;
+            node.style.textAlign = 'center';
+            node.style.color = 'yellow';
+            node.style.backgroundColor = color;
+            node.style.padding = '2rem';
+        }
+
+        count = 1;
+        elem1.onclick = () => {
+            elem1.innerText = `It's first header (${count++})`;
+        }
+        elem1.addEventListener("mouseout", event => {
+            elem1.innerText = "It's first header";
+            count = 0;
+        })
+    </script>
+</body>
+
+</html>
