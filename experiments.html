@@ -49,8 +49,10 @@
         ];
         let count = 1000;
 
+        // dynamic change elements
         for (let i = 0; i < 6; i++) {
             setTimeout(() => {
+                // function addStylesTo(node, text, color)
                 addStylesTo(elements[i], `Header h${i+1}`, colorBack[Math.floor(Math.random() * colorBack.length)]);
             }, count)
             count += 1000;
