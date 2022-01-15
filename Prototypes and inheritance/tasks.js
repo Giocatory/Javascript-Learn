@@ -10,7 +10,7 @@ function f() {
     console.log("Hello!");
 };
 
-f.defer(2000); // выведет "Hello!" через 2 секунды
+f.defer(2000); //Will out "Hello!" after 2 seconds
 
 
 //TASK - 2
@@ -26,4 +26,4 @@ function f(a, b) {
     console.log(a + b);
 }
 
-f.defer(1000)(1, 2); // выведет 3 через 1 секунду.
+f.defer(1000)(1, 2); // Will out 3 after 1 second.
