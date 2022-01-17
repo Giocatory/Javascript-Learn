@@ -1,8 +1,11 @@
 class User {
     static id = 0;
+    
+    #name = '';
+    #age = 0;
 
     constructor(info) {
-        [this.name, this.age] = info.split(', ');
+        [this.#name, this.#age] = info.split(', ');
         this.userID = User.incrId(); // use static method
     }
 
@@ -14,10 +17,10 @@ class User {
         return `${this.userID}: Name - ${this.Name}; Age - ${this.Age}`;
     }
     get Name() {
-        return this.name;
+        return this.#name;
     }
     get Age() {
-        return this.age;
+        return this.#age;
     }
 }
 
