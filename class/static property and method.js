@@ -9,13 +9,23 @@ class User {
     static incrId() {
         return ++User.id; // increment static property
     }
+
+    showUserInfo() {
+        return `${this.userID}: Name - ${this.Name}; Age - ${this.Age}`;
+    }
+    get Name() {
+        return this.name;
+    }
+    get Age() {
+        return this.age;
+    }
 }
 
 let onceUser = new User('Mike, 34');
 let secondUser = new User('Tatyana, 33');
 
 console.log(onceUser.userID); // 1
-console.log(onceUser.name); // Mike
+console.log(onceUser.showUserInfo()); // 1: Name - Mike; Age - 34
 
 console.log(secondUser.userID); // 2
-console.log(secondUser.age); // 33
+console.log(secondUser.showUserInfo()); // 2: Name - Tatyana; Age - 33
