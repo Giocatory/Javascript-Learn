@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let promiseSyntax = new Promise(function(resolve, reject) {
+            // функция-исполнитель (executor)
+        });
+
+        // resolve и reject – это колбэки, которые предоставляет сам JavaScript. Наш код – только внутри исполнителя.
+        // resolve(value) — если работа завершилась успешно, с результатом value.
+        // reject(error) — если произошла ошибка, error – объект ошибки.
+
+        // Исполнитель запускается автоматически, он должен выполнить работу, а затем вызвать resolve или reject.
+
+        /*      .then          */
+        // Синтаксис (Отработает только 1 функция переданная аргументом):
+
+        // promise.then(
+        //   function(result) { /* обработает успешное выполнение */ },
+        //   function(error) { /* обработает ошибку */ }
+        // );
+
+        function loadScript(src) {
+            return new Promise(function(resolve, reject) {
+                let script = document.createElement('script');
+                script.src = src;
+
+                script.onload = () => resolve(script);
+                script.onerror = () => reject(new Error(`Ошибка загрузки скрипта ${src}`));
+
+                document.head.append(script);
+            });
+        }
+
+        let promise = loadScript("https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.js");
+
+        promise.then(
+            script => document.write(`<strong>${script.src}</strong> загружен!<br>`),
+            error => document.write(`Ошибка: ${error.message}<br>`)
+        );
+
+        promise.then(script => document.write('Ещё один обработчик...<br>'));
+    </script>
+</body>
+
+</html>
