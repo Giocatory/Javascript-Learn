@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #result {
+            border: none;
+        }
+        
+        fieldset {
+            width: 30%;
+        }
+        
+        legend {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <fieldset>
+        <legend>Calculator</legend>
+        <p><label for="expression">Expression: &nbsp;</label>
+            <input type="text" name="expression" id="expression"></p>
+        <p>
+            <label for="result">Result =  &nbsp;</label>
+            <input type="text" name="result" id="result">
+        </p>
+        <input type="button" value="calc result" onclick="calc()">
+    </fieldset>
+
+
+    <script>
+        let expression = document.getElementById('#expression');
+        let result = document.getElementById('#result');
+
+        function calc() {
+            result.innerHTML = `${eval(expression.innerHTML)}`;
+        }
+    </script>
+</body>
+
+</html>
