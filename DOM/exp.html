@@ -6,21 +6,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .container {
+            border: 1px solid darkblue;
+            width: 11%;
+        }
+        
+        .field {
+            border: 1px solid black;
+            height: 1em;
+            text-align: center;
+        }
+    </style>
 </head>
 
 <body>
-    <div id="elem">Hello <b>World</b>!</div>
-    <div id="elem1">It's blink text</div>
-
-    <script>
-        document.write(elem.innerHTML); // Hello World
-        console.log(elem.outerHTML); // <div id="elem">Hello <b>World</b>!</div>
-
-        let elem1 = document.getElementById('elem1');
-        // setInterval(() => elem1.hidden = !elem1.hidden, 1000); // мигающий эелемент
-
-        alert(document.body.id)
-    </script>
+    <div class="container">
+        <p class="field"></p>
+        <button onclick="addOne()">1</button>
+        <button onclick="addPlus()">+</button>
+        <button onclick="addTwo()">2</button>
+        <button onclick="addResult()">=</button>
+        <button onclick="addReset()">RE</button>
+    </div>
+    <script src="exp.js"></script>
 </body>
 
 </html>
